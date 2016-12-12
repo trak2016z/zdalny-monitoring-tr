@@ -6,11 +6,11 @@
 
 	if (isset($_POST['login_btn'])) 
 	{
-		//session_start();
-		$username=mysql_real_escape_string($_POST['username']);
-		$password=mysql_real_escape_string($_POST['password']);
+		//session_start();										
+		$username=mysql_real_escape_string($_POST['username']);  // zabezpieczenie przed SQL injection
+		$password=mysql_real_escape_string($_POST['password']);  // zabezpieczenie przed SQL injection
 			
-			if ($username==""||$password=="") 
+			if ($username==""||$password=="") // Gdy nie zostanie wpisany login lub hasło -> wyświetl komunikat
 			{
 				$_SESSION['message']="Wprowadzono niepoprawną nazwę użytkownika lub hasło";
 			}else{
@@ -45,7 +45,7 @@
 <div class="header">
 	<h1>Zdalny monitoring</h1>
 </div>
-<?php
+<?php     //  Okienko do wyświetlania wiadomości o błędach:
 	if (isset($_SESSION['message']))
 	{
 		echo "<div id='error_msg'>".$_SESSION['message']."</div>";
@@ -68,6 +68,9 @@
 		<tr>
 			<td></td>
 			<td><input type="submit" name="login_btn" value="Zaloguj"></td>
+		</tr>
+		<tr>
+			<td><div><a href="rejestracja.php">Zarejestruj się</a></div></td>
 		</tr>
 	</table>
 </form>

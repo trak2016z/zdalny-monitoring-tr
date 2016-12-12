@@ -23,6 +23,7 @@ form{
 	font-size: 16px;
 	padding: 1px;
 	width: 100%;
+	text-align: center;
 }
 #error_msg{
 	width: 50%;

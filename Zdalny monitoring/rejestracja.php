@@ -7,22 +7,22 @@
 	if (isset($_POST['register_btn'])) 
 	{
 		//session_start();
-			$username=mysql_real_escape_string($_POST['username']);
-			$email=mysql_real_escape_string($_POST['email']);
-			$password=mysql_real_escape_string($_POST['password']);
-			$password2=mysql_real_escape_string($_POST['password2']);
+			$username=mysql_real_escape_string($_POST['username']);        // zabezpieczenie przed SQL injection
+			$email=mysql_real_escape_string($_POST['email']);              // zabezpieczenie przed SQL injection
+			$password=mysql_real_escape_string($_POST['password']);        // zabezpieczenie przed SQL injection
+			$password2=mysql_real_escape_string($_POST['password2']);      // zabezpieczenie przed SQL injection
 
-		if ($username==""||$email==""||$password==""||$password2=="") 
-		{
+		if ($username==""||$email==""||$password==""||$password2=="")      // Gdy nie zostanie wpisany login/email/hasło lub 
+		{                                                                  // potwierdzenie hasła -> wyświetl komunikat
 			$_SESSION['message']="Wprowadzono niepoprawne dane";
 		}else
 		{
 			
-			if ($password==$password2) 
+			if ($password==$password2) // Jeżeli potwierdzene hasła = hasło, wtedy wprowadź nowy rekord do bazy 
 			{
 				//utwórz użytkownika
 				$password=md5($password); // dla bezpieczeństwa zahaszuj hasło przed zapisaniem
-				$sql= "INSERT INTO users(username, email, password) VALUES('$username','$email', '$password')";
+				$sql= "INSERT INTO users(username, email, password) VALUES('$username','$email', '$password')";  
 				mysqli_query($db, $sql);
 				$_SESSION['message']="Zostałeś zalogowany";
 				$_SESSION['username']= $username;
