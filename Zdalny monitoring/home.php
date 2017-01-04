@@ -101,7 +101,7 @@
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="http://materializecss.com/">Materialize.css Dokumentacja</a></li>
 				  <li><a class="grey-text text-lighten-3" href="http://www.arducam.com/">Strona domowa ArduCam</a></li>
-
+				  <li><a class="grey-text text-lighten-3" href="https://botland.com.pl/moduly-wifi/4450-modul-wifi-esp8266-nodemcu-v2.html">Wykorzystany w projekcie moduł WiFi</a></li>
                 </ul>
               </div>
             </div>
