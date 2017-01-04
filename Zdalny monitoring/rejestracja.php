@@ -43,17 +43,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Zdalny monitoring</title>
+
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="materialize.min.css">
 </head>
 <body>
-<div class="header">
-	<h1>Zdalny monitoring</h1>
-</div>
+<nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Zdalny monitoring - Rejestracja</a>
+ 		<ul class="right hide-on-med-and-down">
+        <li><a class="waves-effect waves-light btn" href="logowanie.php">Zaloguj się</a></li>
+      </ul>
+    </div>
+</nav>
 <?php
 	if (isset($_SESSION['message']))
 	{
-		echo "<div id='error_msg'>".$_SESSION['message']."</div>";
+		echo "<div class='container'><div class='card-panel red lighten-1'><h5 class='center-align'>".$_SESSION['message']."</h5></div></div>";
 		unset($_SESSION['message']);
 
 	}
@@ -61,30 +67,26 @@
 <form action="rejestracja.php" method="POST">
 	<table>
 		<tr>
-			<td>Nazwa użytkownika:</td>
-			<td><input type="text" name="username" class="textInput"></td>
+			<td><div><label for="username"><h6>Nazwa użytkownika:</h6></label></div></td>
+			<td><input type="text" name="username" class="validate"></td>
 		</tr>
 		<tr>
-			<td>Adres Email:</td>
-			<td><input type="email" name="email" class="textInput"></td>
+			<td><div><label for="email"><h6>Adres Email:</h6></label></div></td>
+			<td><input type="email" name="email" class="validate"></td>
 		</tr>
 		<tr>
-			<td>Hasło:</td>
-			<td><input type="password" name="password" class="textInput"></td>
+			<td><div><label for="password"><h6>Hasło:</h6></label></div></td>
+			<td><input type="password" name="password" class="validate"></td>
 		</tr>
 		<tr>
-			<td>Potwierdź hasło:</td>
-			<td><input type="password" name="password2" class="textInput"></td>
+			<td><div><label for="password2"><h6>Potwierdź hasło:</h6></label></div></td>
+			<td><input type="password" name="password2" class="validate"></td>
 		</tr>
 		<tr>
 			<td></td>
-			<td><input type="submit" name="register_btn" value="Zarejestruj"></td>
-		</tr>
-		<tr>
-			<td><div><a href="logowanie.php">Zaloguj się</a></div></td>
-		</tr>
-	
-		
+			<td><button class="btn waves-effect waves-light" type="submit" name="register_btn">Zarejestruj
+  			</button></td>
+		</tr>	
 		
 	</table>
 </form>

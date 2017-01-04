@@ -23,10 +23,9 @@ form{
 	font-size: 16px;
 	padding: 1px;
 	width: 100%;
-	text-align: center;
 }
 #error_msg{
-	width: 50%;
+	width: 80%;
 	margin: 5px auto;
 	height: 30px;
 	border: 1px solid #FF0000;
@@ -35,6 +34,17 @@ form{
 	text-align: center;
 	padding-top: 10px;
 }
-td{
+.home{
+	text-align: center;
+}
+.logout{
 	text-align: right;
+}
+.stream_view.center{
+	display: block;
+    margin: 0 auto;
+    border: 1px solid #5E6E66;
+}
+td{
+	text-align: left;
 }
