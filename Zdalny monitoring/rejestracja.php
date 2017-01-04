@@ -56,7 +56,7 @@
       </ul>
     </div>
 </nav>
-<?php
+<?php    //  Okienko do wyświetlania wiadomości o błędach:
 	if (isset($_SESSION['message']))
 	{
 		echo "<div class='container'><div class='card-panel red lighten-1'><h5 class='center-align'>".$_SESSION['message']."</h5></div></div>";

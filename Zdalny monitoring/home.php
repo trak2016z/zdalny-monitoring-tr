@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	if($_SESSION['username'] == "")
-		header("location: logowanie.php");
+	if($_SESSION['username'] == "")             // kiedy brak nazwy użytkownika, wówczas przejdź na stronę logowania
+		header("location: logowanie.php"); 
 ?>
 
 
